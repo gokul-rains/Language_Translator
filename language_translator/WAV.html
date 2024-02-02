@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>WAV To Text</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;900&family=Raleway:wght@400;700&family=Roboto+Mono:ital,wght@1,700&display=swap');
+    body{
+        padding: 20px;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply styles to the body */
+body {
+    font-family: Arial, sans-serif;
+  
+    text-align: center;
+   
+    padding: 20px;
+}
+
+/* Style the header */
+header {
+    background-color: #007BFF;
+    color: #fff;
+   
+    border-radius: 10px;
+}
+    h1 {
+    font-size: 24px;
+}
+
+/* Style the main content */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+    border: 1px solid ;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+   
+}
+
+/* Style the input and button */
+.container {
+    margin: 10px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Style the text container */
+#textContainer {
+   
+    border: 1px solid ;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: left;
+    border-radius: 5px;
+}
+
+.record-button {
+    background-color: #4caf50; /* Green color for active action */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.record-button:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+}
+
+.record-button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.record-button:disabled {
+    background-color: #ccc;
+    color: #888;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+</style>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-circle"></div>
+        <!-- <div class="preloader-img">
+            <img src="img/core-img/leaf.png" alt="">
+        </div> -->
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+
+        <!-- ***** Navbar Area ***** -->
+        <div class="alazea-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="alazeaNav">
+
+                        <!-- Nav Brand -->
+                        <a href="index.html" class="nav-brand"></a>
+
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Navbar Start -->
+                            <div class="classynav">
+                                <ul>
+                                  
+                                    <li><a href="index.html">Speech To Text</a></li>
+                                    <li><a href="MP3.html">Mp3 To Text</a></li>
+                                    <li><a href="WAV.html">WAV To Text</a></li>
+                                    <li><a href="ITT.html">Image To Text</a></li>
+                                </ul>
+
+                                <!-- Search Icon -->
+
+                            </div>
+                            <!-- Navbar End -->
+                        </div>
+                    </nav>
+
+                    <!-- Search Form -->
+                    <div class="search-form">
+                        <form action="#" method="get">
+                            <input type="search" name="search" id="search" placeholder="Type keywords &amp; press enter...">
+                            <button type="submit" class="d-none"></button>
+                        </form>
+                        <!-- Close Icon -->
+                        <div class="closeIcon"><i class="fa fa-times" aria-hidden="true"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Breadcrumb Area Start ##### -->
+    <div class="breadcrumb-area">
+        <!-- Top Breadcrumb Area -->
+        <div class="top-breadcrumb-area bg-img bg-overlay d-flex align-items-center justify-content-center" style="background-image: url(wav.jpeg);">
+            <h2>WAV To Text</h2>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">WAV To Text</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Breadcrumb Area End ##### -->
+    <!-- ##### All Javascript Files ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+
+
+</body>
+<body style="background-color: #faeeee;">
+    <h1 style="color: #333; font-size: 24px;">WAV to Text</h1>
+    <div style="background-color: #fff; border: 10px solid #ddd; padding: 20px; margin: 20px auto; max-width: 400px; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); text-align: center;">
+        <input type="file" id="audioInput" accept=".wav" style="display: block; margin: 10px auto;">
+        <br>
+        <button id="startRecognition" class="record-button">Start Recognition</button>
+    </div>
+    <div id="textContainer" style="background-color: #fff; border: 8px solid #ddd; padding: 100px ; margin: 20px auto; max-width: 800px; border-radius: 5px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); text-align: left;"></div>
+
+    <script>
+        const audioInput = document.getElementById('audioInput');
+const startRecognition = document.getElementById('startRecognition');
+const textContainer = document.getElementById('textContainer');
+
+let recognition;
+let recognizedText = ''; // Variable to accumulate recognized text
+
+audioInput.addEventListener('change', handleAudioFile);
+
+function handleAudioFile(event) {
+    const audioFile = event.target.files[0];
+    if (!audioFile) return;
+
+    recognition = new webkitSpeechRecognition() || new SpeechRecognition();
+    recognition.lang = 'ta-IN';
+
+    recognition.continuous = true; // Enable continuous recognition
+    recognition.interimResults = true; // Enable interim results
+
+    recognition.onresult = (event) => {
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+            if (event.results[i].isFinal) {
+                recognizedText += event.results[i][0].transcript + ' ';
+            } else {
+                recognizedText += event.results[i][0].transcript;
+            }
+        }
+        // Update the text container with accumulated recognized text
+        textContainer.textContent = recognizedText.trim();
+    };
+
+    recognition.onend = () => {
+        startRecognition.disabled = false;
+    };
+
+    recognition.onerror = (event) => {
+        console.error('Speech recognition error:', event.error);
+    };
+
+    // Request microphone permission when the button is clicked
+    startRecognition.addEventListener('click', () => {
+        navigator.mediaDevices.getUserMedia({ audio: true })
+            .then(() => {
+                audioInput.style.display = 'none'; // Hide the file input
+                startRecognition.disabled = true; // Disable the button after starting recognition
+                audioInput.value = ''; // Clear the file input value
+                const audio = new Audio();
+                audio.src = URL.createObjectURL(audioFile);
+                audio.play(); // Start playing the audio
+                recognizedText = ''; // Reset recognized text
+                recognition.start();
+            })
+            .catch((error) => {
+                console.error('Microphone permission denied:', error);
+            });
+    });
+}
+    </script>
+
+    </html>
+
